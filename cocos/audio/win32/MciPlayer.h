@@ -57,6 +57,9 @@ public:
     */
     UINT GetSoundID();
 
+	//播放到指定位置,单位为毫秒
+	void SeekTo(int msec);
+
 private:
     friend LRESULT WINAPI _SoundPlayProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 

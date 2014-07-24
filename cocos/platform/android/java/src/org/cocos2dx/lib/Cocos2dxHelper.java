@@ -178,6 +178,10 @@ public class Cocos2dxHelper {
 		Cocos2dxHelper.sCocos2dMusic.playBackgroundMusic(pPath, isLoop);
 	}
 
+    public static void playBackgroundMusicTo(int msec) {
+        Cocos2dxHelper.sCocos2dMusic.playBackgroundMusicTo(msec);
+    }
+
 	public static void resumeBackgroundMusic() {
 		Cocos2dxHelper.sCocos2dMusic.resumeBackgroundMusic();
 	}
