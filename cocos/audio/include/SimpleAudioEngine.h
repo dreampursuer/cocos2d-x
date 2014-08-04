@@ -93,6 +93,12 @@ public:
     virtual void playBackgroundMusic(const char* pszFilePath, bool bLoop = false);
 
     /**
+     @brief 播放音乐到某个指定位置
+     @param msec 毫秒
+     */
+	virtual void playBackgroundMusicTo(const int msec);
+
+    /**
      @brief Stop playing background music
      @param bReleaseData If release the background music data or not.As default value is false
      * @js stopMusic

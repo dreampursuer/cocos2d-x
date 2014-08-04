@@ -115,6 +115,20 @@ void MciPlayer::Play(UINT uTimes /* = 1 */)
     }
 }
 
+//播放到指定位置,单位为毫秒
+void MciPlayer::SeekTo(int msec)
+{
+	MCI_SEEK_PARMS SeekParms;
+	SeekParms.dwTo = msec;
+
+	mciSendCommand(_dev, MCI_SEEK,  MCI_TO| MCI_WAIT,(DWORD)(LPVOID)&SeekParms);
+
+	MCI_PLAY_PARMS mciPlay = {0};
+	mciPlay.dwCallback = reinterpret_cast<DWORD_PTR>(_wnd);
+	mciSendCommand(_dev, MCI_PLAY, MCI_NOTIFY,reinterpret_cast<DWORD_PTR>(&mciPlay));
+}
+
+
 void MciPlayer::Close()
 {
     if (_playing)

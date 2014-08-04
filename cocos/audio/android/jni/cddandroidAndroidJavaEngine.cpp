@@ -178,6 +178,17 @@ namespace CocosDenshion {
             methodInfo.env->DeleteLocalRef(methodInfo.classID);
         }
 
+        void AndroidJavaEngine::playBackgroundMusicTo( const int msec ) {
+            cocos2d::JniMethodInfo methodInfo;
+        
+            if (! getJNIStaticMethodInfo(methodInfo, "playBackgroundMusicTo", "(I)V")) {
+                return ;
+            }
+        
+            methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, msec);
+            methodInfo.env->DeleteLocalRef(methodInfo.classID);
+        }
+		
         float AndroidJavaEngine::getEffectsVolume() {
             cocos2d::JniMethodInfo methodInfo;
             jfloat ret = -1.0;

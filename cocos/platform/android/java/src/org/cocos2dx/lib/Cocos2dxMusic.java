@@ -269,6 +269,14 @@ public class Cocos2dxMusic {
 		return mediaPlayer;
 	}
 
+    /**
+     * 播放到指定位置
+     * @param msec
+     */
+    public void playBackgroundMusicTo(int msec){
+        mBackgroundMediaPlayer.seekTo(msec);
+    }
+
 	// ===========================================================
 	// Inner and Anonymous Classes
 	// ===========================================================
