@@ -291,3 +291,13 @@ void SimpleAudioEngine::stopAllEffects()
 }
 
 } // endof namespace CocosDenshion {
+
+/**
+ @brief 播放音乐到某个指定位置
+ @param msec 毫秒
+ */
+void SimpleAudioEngine::playBackgroundMusicTo(const int msec)
+{
+	//TODO:Need implement
+}
+	
