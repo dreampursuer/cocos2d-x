@@ -129,6 +129,13 @@ static void static_resumeEffect(unsigned int uSoundId)
     [[SimpleAudioEngine sharedEngine] resumeEffect: uSoundId];
 }
 
+//Add by happylearn project
+static void static_playBackgroundMusicTo(const int msec)
+{
+    NSTimeInterval seconds = msec / 1000.0;
+    [[SimpleAudioEngine sharedEngine] setCurrentTime:seconds];
+}
+
 static void static_resumeAllEffects()
 {
     [[SimpleAudioEngine sharedEngine] resumeAllEffects];
@@ -291,12 +298,13 @@ void SimpleAudioEngine::stopAllEffects()
 }
 
 /**
+ Add by happylearn project
  @brief 播放音乐到某个指定位置
  @param msec 毫秒
  */
 void SimpleAudioEngine::playBackgroundMusicTo(const int msec)
 {
-	//TODO:Need implement
+    static_playBackgroundMusicTo(msec);
 }
 } // endof namespace CocosDenshion {
 

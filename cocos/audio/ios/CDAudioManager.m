@@ -150,6 +150,12 @@ NSString * const kCDN_AudioManagerInitialised = @"kCDN_AudioManagerInitialised";
     return volume;
 }
 
+//Add by happylearn project
+-(void) setCurrentTime:(NSTimeInterval) aCurrentTime
+{
+    [audioSourcePlayer setCurrentTime:aCurrentTime];
+}
+
 #pragma mark Audio Interrupt Protocol
 -(BOOL) mute
 {
@@ -601,7 +607,13 @@ static BOOL configured = FALSE;
 -(void) setBackgroundMusicCompletionListener:(id) listener selector:(SEL) selector {
     backgroundMusicCompletionListener = listener;
     backgroundMusicCompletionSelector = selector;
-}    
+}
+
+//Add by happylearn project
+-(void) setCurrentTime:(NSTimeInterval) aCurrentTime
+{
+    [self.backgroundMusic setCurrentTime:aCurrentTime];
+}
 
 /*
  * Call this method to have the audio manager automatically handle application resign and

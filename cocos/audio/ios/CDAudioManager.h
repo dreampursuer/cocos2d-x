@@ -130,7 +130,8 @@ typedef enum {
 -(void) resume;
 /** Returns whether or not the audio source is playing */
 -(BOOL) isPlaying;
-
+//Add by happylearn project
+-(void) setCurrentTime:(NSTimeInterval) aCurrentTime;
 @end
 
 /** 
@@ -222,7 +223,8 @@ typedef enum {
 -(BOOL) isBackgroundMusicPlaying;
 
 -(void) setBackgroundMusicCompletionListener:(id) listener selector:(SEL) selector;
-
+//Add by happylearn project
+-(void) setCurrentTime:(NSTimeInterval) aCurrentTime;
 @end
 
 /** Fader for long audio source objects */

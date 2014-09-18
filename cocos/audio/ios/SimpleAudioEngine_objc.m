@@ -121,6 +121,12 @@ static CDBufferManager *bufferManager = nil;
     return [am willPlayBackgroundMusic];
 }
 
+//Add by happylearn project
+-(void) setCurrentTime: (NSTimeInterval) aCurrentTime
+{
+    [am setCurrentTime:aCurrentTime];
+}
+
 #pragma mark SimpleAudioEngine - sound effects
 
 -(ALuint) playEffect:(NSString*) filePath loop:(BOOL) loop
@@ -175,6 +181,7 @@ static CDBufferManager *bufferManager = nil;
     CDLOGINFO(@"Denshion::SimpleAudioEngine unloadedEffect %@",filePath);
     [bufferManager releaseBufferForFile:filePath];
 }
+
 
 #pragma mark Audio Interrupt Protocol
 -(BOOL) mute
